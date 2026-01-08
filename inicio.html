@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>San Miguel de Allende</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0b0b0b;
+    color: #f0f0f0;
+}
+
+header {
+    background-color: #111;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.9);
+}
+
+.logo {
+    color: #56ccf2;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li { position: relative; }
+
+nav a {
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #2f80ed, #56ccf2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    background: #161616;
+    border-radius: 15px;
+    min-width: 180px;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px 20px;
+    background: none;
+}
+
+.dropdown a:hover {
+    background: #1f1f1f;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #121212;
+    padding: 45px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.9);
+}
+
+section {
+    display: none;
+    max-height: 78vh;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+section.active {
+    display: block;
+}
+
+section::-webkit-scrollbar { width: 8px; }
+section::-webkit-scrollbar-thumb {
+    background: #56ccf2;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #56ccf2;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.9;
+    font-size: 16px;
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 22px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.85);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+}
+
+.gallery img:active {
+    transform: scale(0.95);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    margin: 35px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">San Miguel de Allende</div>
+    <nav>
+        <ul>
+            <li><a onclick="show('home')">Home</a></li>
+            <li>
+                <a onclick="toggleMenu()">Services ▾</a>
+                <div class="dropdown" id="menu">
+                    <a onclick="show('tourism')">Tourism</a>
+                    <a onclick="show('gastronomy')">Gastronomy</a>
+                    <a onclick="show('culture')">Culture</a>
+                </div>
+            </li>
+            <li><a onclick="show('about')">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<section id="home" class="active">
+<h2>San Miguel de Allende</h2>
+
+<p>
+San Miguel de Allende is a historic city located in the state of Guanajuato, Mexico.
+It is widely recognized as one of the most beautiful and culturally rich cities in the country.
+Its well-preserved colonial architecture, colorful streets, and artistic atmosphere
+have made it an international destination.
+</p>
+
+<p>
+The city was founded in the 16th century and played an important role in Mexico’s
+independence movement. Today, San Miguel de Allende is a UNESCO World Heritage Site
+and a symbol of Mexican history and identity.
+</p>
+
+<div class="gallery">
+    <img src="home1.jpg">
+    <img src="home2.jpg">
+    <img src="home3.jpg">
+    <img src="home4.jpg">
+</div>
+
+<p>
+Visitors from all over the world come to enjoy its relaxed lifestyle, cultural events,
+local traditions, and friendly community. San Miguel de Allende combines history,
+art, and modern life in a unique way.
+</p>
+
+<p>
+Walking through the city allows people to experience museums, art galleries,
+traditional markets, and historic buildings that tell the story of Mexico’s past
+while embracing creativity and innovation.
+</p>
+</section>
+
+<!-- TOURISM -->
+<section id="tourism">
+<h2>Tourism</h2>
+
+<div class="gallery">
+    <img src="tourism1.jpg">
+    <img src="tourism2.jpg">
+    <img src="tourism3.jpg">
+</div>
+
+<p>
+Tourism is one of the main attractions of San Miguel de Allende.
+The city offers historical landmarks such as the Parroquia de San Miguel Arcángel,
+museums, viewpoints, and colonial plazas.
+</p>
+
+<p>
+Visitors can explore the historic center, enjoy walking tours, visit craft shops,
+and discover the cultural heritage that defines the city’s identity.
+</p>
+</section>
+
+<!-- GASTRONOMY -->
+<section id="gastronomy">
+<h2>Gastronomy</h2>
+
+<div class="gallery">
+    <img src="food1.jpg">
+    <img src="food2.jpg">
+    <img src="food3.jpg">
+</div>
+
+<p>
+San Miguel de Allende is famous for its diverse gastronomy.
+The city offers traditional Mexican dishes such as enchiladas, tacos, and tamales,
+as well as international cuisine.
+</p>
+
+<p>
+Restaurants range from street food stalls to fine dining experiences,
+making the city an important culinary destination.
+</p>
+</section>
+
+<!-- CULTURE -->
+<section id="culture">
+<h2>Culture</h2>
+
+<div class="gallery">
+    <img src="culture1.jpg">
+    <img src="culture2.jpg">
+    <img src="culture3.jpg">
+</div>
+
+<p>
+Culture is a fundamental part of life in San Miguel de Allende.
+The city hosts art festivals, music events, traditional celebrations,
+and cultural exhibitions throughout the year.
+</p>
+
+<p>
+It is also home to art schools, creative communities, and international artists
+who contribute to its vibrant cultural environment.
+</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+
+    <p>
+        This website was created by Eduardo Misael, Angélica, and Diego as part of an
+        English class project. The main goal of this website is to present San Miguel
+        de Allende and highlight its history, culture, gastronomy, and importance as
+        a tourist destination.
+    </p>
+
+    <p>
+        The website was developed using HTML and CSS, applying the previous knowledge
+        acquired during a basic web development course. Through this project, we
+        practiced web structure, design, organization of content, and visual
+        presentation in English.
+    </p>
+
+    <p>
+        This project represents both a cultural presentation and a technical exercise,
+        combining language learning with technology skills to create an informative
+        and visually appealing website.
+    </p>
+
+    <h3 style="color:#56ccf2; margin-top:30px;">Location</h3>
+
+    <!-- MAPA DE GOOGLE -->
+    <iframe
+        src="https://www.google.com/maps?q=San+Miguel+de+Allende,+Guanajuato&output=embed"
+        width="100%"
+        height="300"
+        style="border:0; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</section>
+
+
+</div>
+
+<footer>
+© 2026 | San Miguel de Allende
+</footer>
+
+<script>
+function show(id) {
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    document.getElementById("menu").style.display = "none";
+}
+
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
